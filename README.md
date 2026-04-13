@@ -12,12 +12,13 @@
 
 ## About
 
-Macropipe is a transformation engine written in Python, using text-based macro languages
-that compile to Polars expressions.
+Macropipe follows the structured pipeline approach of the Polars
+[pipe operator]. It provides text-based macro languages that
+compile to Polars expressions. See also [Macropipe Primer].
 
-It is suitable for data decoding, encoding, conversion, translation, transformation,
-and cleansing purposes, to be used as a pipeline element for data pre- or post-processing,
-or as a standalone converter program.
+The library can be used for data decoding, encoding, conversion, translation,
+transformation, and cleansing purposes, either as a pipeline element for data
+pre- or post-processing, or as a standalone converter program.
 
 ## Installation
 
@@ -32,34 +33,30 @@ uv pip install --upgrade 'macropipe[all]'
 In order to learn how to use the library, please visit the [documentation],
 and explore the source code or its [examples].
 
-
 ## Project Information
 
 ### Acknowledgements
+
 Kudos to the authors of all the many software components this library is
 vendoring and building upon.
 
-### Similar Projects
-See [research and development notes],
-specifically [an introduction and overview about Singer].
-
 ### Contributing
-The `macropipe` package is an open source project, and is
+
+The `macropipe` package is an open-source project, and is
 [managed on GitHub]. The project is still in its infancy, and
 we appreciate contributions of any kind.
 
 ### License
+
 MIT. However, optional dependencies may pull in packages using different
 licenses. See [LICENSE] and [NOTICE] files about more details.
 
 
-[An introduction and overview about Singer]: https://github.com/daq-tools/lorrystream/blob/main/doc/singer/intro.md
 [documentation]: https://macropipe.readthedocs.io/
-[DWIM]: https://en.wikipedia.org/wiki/DWIM
-[examples]: https://macropipe.readthedocs.io/examples.html
-[Kris Zyp]: https://github.com/kriszyp
-[macropipe]: https://pypi.org/project/macropipe/
+[examples]: https://macropipe.readthedocs.io/example/
 [LICENSE]: https://github.com/panodata/macropipe/blob/main/LICENSE
+[macropipe]: https://pypi.org/project/macropipe/
+[Macropipe Primer]: https://macropipe.readthedocs.io/primer.html
 [managed on GitHub]: https://github.com/panodata/macropipe
 [NOTICE]: https://github.com/panodata/macropipe/blob/main/NOTICE
 [PyPI]: https://pypi.org/
