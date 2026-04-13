@@ -1,0 +1,259 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools>=42", # At least v42 of setuptools required.
+  "versioningit",
+]
+
+[project]
+name = "macropipe"
+description = "Exploring text-based macro languages that compile to Polars expressions."
+readme = "README.md"
+keywords = [
+  "compile",
+  "conversion",
+  "convert",
+  "data",
+  "decode",
+  "deserialize",
+  "encode",
+  "i/o",
+  "json",
+  "map data",
+  "marshal",
+  "nested data",
+  "polars",
+  "polars-extension",
+  "serialize",
+  "sql",
+  "transcode",
+  "transform",
+  "transformation",
+  "translate",
+  "unmarshal",
+  "unserialize",
+]
+license = "MIT"
+license-files = [ "LICENSE" ]
+authors = [
+  { name = "Andreas Motl", email = "andreas.motl@panodata.org" },
+]
+requires-python = ">=3.9"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Plugins",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Education",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: Manufacturing",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: System Administrators",
+  "Intended Audience :: Telecommunications Industry",
+  "Operating System :: OS Independent",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: Unix",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Programming Language :: SQL",
+  "Topic :: Adaptive Technologies",
+  "Topic :: Communications",
+  "Topic :: Database",
+  "Topic :: Documentation",
+  "Topic :: Education",
+  "Topic :: Internet",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Topic :: Scientific/Engineering :: Interface Engine/Protocol Translator",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Pre-processors",
+  "Topic :: Software Development :: Testing",
+  "Topic :: System :: Systems Administration",
+  "Topic :: Text Processing",
+  "Topic :: Utilities",
+]
+dynamic = [
+  "version",
+]
+dependencies = [
+  "cattrs<26",
+  "importlib-resources<6.5; python_version<'3.10'",
+  "orjson<4",
+  "orjsonl<2",
+  "polars>=1.15,<1.40",
+]
+optional-dependencies.all = [
+  "macropipe[geo]",
+]
+optional-dependencies.develop = [
+  "poethepoet<1",
+  "pyproject-fmt<3",
+  "ruff<0.16",
+  "sphinx-autobuild>=2024",
+  "ty==0.0.29",
+  "validate-pyproject>=0.23,<1",
+]
+optional-dependencies.docs = [
+  "myst-parser[linkify]>=0.18,<5",
+  "sphinx-autoapi<4",
+  "sphinx-autodoc-typehints<4",
+  "sphinx-copybutton",
+  "sphinx-design-elements<1",
+  "sphinx-sitemap<3",
+  "sphinxawesome-theme<7",
+  "sphinxcontrib-mermaid<2",
+  "sphinxext-opengraph<1",
+]
+optional-dependencies.geo = [
+  "polars-st<0.7; python_version>='3.10'",
+]
+optional-dependencies.release = [
+  "build<2",
+  "twine<7",
+]
+optional-dependencies.test = [
+  "pytest<10",
+  "pytest-cov<8",
+]
+urls.Changelog = "https://macropipe.readthedocs.io/changes.html"
+urls.Documentation = "https://macropipe.readthedocs.io/"
+urls.Homepage = "https://macropipe.readthedocs.io/"
+urls.Issues = "https://github.com/panodata/macropipe/issues"
+urls.Repository = "https://github.com/panodata/macropipe"
+
+[tool.ruff]
+line-length = 100
+extend-exclude = []
+lint.select = [
+  # Builtins
+  "A",
+  # Bugbear
+  "B",
+  # comprehensions
+  "C4",
+  # Pycodestyle
+  "E",
+  # eradicate
+  "ERA",
+  # Pyflakes
+  "F",
+  # isort
+  "I",
+  # pandas-vet
+  "PD",
+  # return
+  "RET",
+  # Bandit
+  "S",
+  # print
+  "T20",
+  "W",
+  # flake8-2020
+  "YTT",
+]
+lint.extend-ignore = [
+  # zip() without an explicit strict= parameter
+  "B905",
+  # Unnecessary variable assignment before `return` statement
+  "RET504",
+  # Unnecessary `elif` after `return` statement
+  "RET505",
+  # Probable insecure usage of temporary file or directory
+  "S108",
+]
+lint.per-file-ignores."examples/*" = [
+  "ERA001", # Found commented-out code
+  "T201",   # Allow `print`
+  "T203",   # Allow `pprint`
+]
+lint.per-file-ignores."tests/*" = [
+  "S101", # Allow use of `assert`, and `print`.
+]
+
+[tool.pytest]
+ini_options.addopts = """
+  -rfEXs -p pytester --strict-markers --verbosity=3
+  --cov --cov-report=term-missing --cov-report=xml
+  """
+ini_options.minversion = "2.0"
+ini_options.log_level = "DEBUG"
+ini_options.log_cli_level = "DEBUG"
+ini_options.log_format = "%(asctime)-15s [%(name)-36s] %(levelname)-8s: %(message)s"
+ini_options.pythonpath = [
+  "src",
+]
+ini_options.testpaths = [
+  "examples",
+  "tests",
+  "src/macropipe",
+]
+ini_options.xfail_strict = true
+ini_options.markers = []
+
+[tool.coverage]
+run.branch = false
+run.omit = [
+  "tests/*",
+]
+paths.source = [
+  "src/",
+]
+report.exclude_lines = [
+  "# pragma: no cover",
+  "raise NotImplemented",
+]
+report.fail_under = 0
+report.show_missing = true
+
+[tool.poe]
+# ===================
+# Tasks configuration
+# ===================
+tasks.check = [
+  "lint",
+  "test",
+]
+tasks.docs-autobuild = [
+  { cmd = "sphinx-autobuild --open-browser --watch src docs docs/_build" },
+]
+tasks.docs-html = [
+  { cmd = "sphinx-build -W --keep-going docs docs/_build" },
+]
+tasks.docs-linkcheck = [
+  { cmd = "sphinx-build -W --keep-going -b linkcheck docs docs/_build" },
+]
+tasks.format = [
+  { cmd = "ruff format ." },
+  # Configure Ruff not to auto-fix (remove!):
+  # unused imports (F401), unused variables (F841), `print` statements (T201), and commented-out code (ERA001).
+  { cmd = "ruff check --fix --ignore=ERA --ignore=F401 --ignore=F841 --ignore=T20 --ignore=ERA001 ." },
+  { cmd = "pyproject-fmt --keep-full-version pyproject.toml" },
+]
+tasks.lint = [
+  { cmd = "ruff format --check ." },
+  { cmd = "ruff check ." },
+  { cmd = "ty check src" },
+  { cmd = "validate-pyproject pyproject.toml" },
+]
+tasks.release = [
+  { cmd = "python -m build" },
+  { cmd = "twine upload --skip-existing dist/*" },
+]
+tasks.test = [
+  { cmd = "pytest" },
+]
+
+[tool.versioningit]
+# Needed until `mypy-0.990` for `ConverterDefinition` in `converter.py`.
+# https://github.com/python/mypy/issues/731#issuecomment-1260976955
+# enable_recursive_aliases = true
+vcs.method = "git-archive"
+vcs.default-tag = "v0.0.0"
+vcs.describe-subst = "$Format:%(describe:tags,match=v*)$"
