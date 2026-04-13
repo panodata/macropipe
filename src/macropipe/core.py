@@ -50,7 +50,7 @@ class MacroPipe:
 
     @staticmethod
     def decode_expression(expression: str) -> t.Tuple[str, t.List[str]]:
-        """
+        r"""
         Tokenize the expression and convert it to macro invocation descriptor.
 
         In contrast to the Python-based API, Macropipe invents a simple text-based
