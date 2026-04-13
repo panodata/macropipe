@@ -96,7 +96,7 @@ optional-dependencies.develop = [
   "poethepoet<1",
   "pyproject-fmt<3",
   "ruff<0.16",
-  "sphinx-autobuild>=2024",
+  "sphinx-autobuild>=2024.10.3",
   "ty==0.0.29",
   "validate-pyproject>=0.23,<1",
 ]
