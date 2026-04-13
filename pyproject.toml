@@ -98,7 +98,7 @@ optional-dependencies.develop = [
   "ruff<0.16",
   "sphinx-autobuild>=2024",
   "ty==0.0.29",
-  "validate-pyproject>=0.23,<1",
+  "validate-pyproject>=0.25,<1",
 ]
 optional-dependencies.docs = [
   "myst-parser[linkify]>=0.18,<5",
