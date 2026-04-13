@@ -7,7 +7,7 @@ orphan: true
 ## Iteration +1
 
 - Allow registering functions under different names / aliases.
-- Unlock using regular expressions directly on columns, using
+- Unlock using "regular" Polars expressions directly on columns, using
   a special syntax like `col=foo:expr:arg1,arg2`.
 - Add sorting for standalone use. When importing into a database, you don't
   necessarily need it, but of course in many other cases.
