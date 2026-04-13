@@ -220,7 +220,7 @@ class Functions:
             Recipe: "json_array_to_wkt_point:coordinates"
             Output: {"coordinates": "POINT ( 9.757 47.389 )"}
         """
-        import polars_st as st
+        import polars_st as st  # ty: ignore[unresolved-import]
 
         return self._lf.with_columns(
             st.point(pl.col(col_name).str.json_decode(dtype=pl.List(pl.Float64))).st.to_wkt()
@@ -302,7 +302,7 @@ class Functions:
             Recipe: "json_fields_to_wkt_point:data:longitude:latitude:coordinates:drop=true"
             Output: {"coordinates": "POINT ( 9.757 47.389 )"}
         """
-        import polars_st as st
+        import polars_st as st  # ty: ignore[unresolved-import]
 
         decoded = pl.col(source_column).str.json_decode(
             dtype=pl.Struct(
