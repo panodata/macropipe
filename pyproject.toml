@@ -101,7 +101,7 @@ optional-dependencies.develop = [
   "validate-pyproject>=0.25,<1",
 ]
 optional-dependencies.docs = [
-  "myst-parser[linkify]>=0.18,<5",
+  "myst-parser[linkify]>=3.0.1,<5",
   "sphinx-autoapi<4",
   "sphinx-autodoc-typehints<4",
   "sphinx-copybutton",
