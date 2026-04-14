@@ -12,12 +12,12 @@
 
 ## About
 
-Macropipe follows the structured pipeline approach of the Polars
-[pipe operator]. It provides text-based macro languages that
-compile to Polars expressions. See also [Macropipe Primer].
+Macropipe follows the structured pipeline approach of the Polars [pipe operator].
+Building upon that, it explores text-based macro languages that compile to Polars
+expressions. See also [Macropipe Primer].
 
-The library can be used for data decoding, encoding, conversion, translation,
-transformation, and cleansing purposes, either as a pipeline element for data
+The software can be used as a library for data decoding, encoding, conversion,
+translation, and transformation purposes, either as a pipeline element for data
 pre- or post-processing, or as a standalone converter program.
 
 ## Installation
@@ -59,5 +59,6 @@ licenses. See [LICENSE] and [NOTICE] files about more details.
 [Macropipe Primer]: https://macropipe.readthedocs.io/primer.html
 [managed on GitHub]: https://github.com/panodata/macropipe
 [NOTICE]: https://github.com/panodata/macropipe/blob/main/NOTICE
+[pipe operator]: https://docs.pola.rs/api/python/stable/reference/lazyframe/api/polars.LazyFrame.pipe.html
 [PyPI]: https://pypi.org/
 [Python]: https://en.wikipedia.org/wiki/Python_(programming_language)
