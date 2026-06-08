@@ -6,7 +6,7 @@ from ast import literal_eval
 import orjson
 
 if t.TYPE_CHECKING:  # pragma: no cover
-    PythonDataType: t.TypeAlias = type  # ty: ignore[unresolved-attribute]
+    PythonDataType: t.TypeAlias = type
 
 
 def decode_list(data: t.Union[str, t.List[str]]) -> t.List[str]:
@@ -29,7 +29,7 @@ def gettype(name: str) -> "PythonDataType":
         raise ValueError(f"Symbol does not exist: {name}")
     if not isinstance(resolved, type):
         raise ValueError(f"Resolved symbol is not a Python type: {name}")
-    return t.cast("PythonDataType", resolved)
+    return resolved
 
 
 def ignoreargs(func, count):
