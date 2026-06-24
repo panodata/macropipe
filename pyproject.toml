@@ -104,7 +104,7 @@ optional-dependencies.docs = [
   "sphinx-design-elements<1",
   "sphinx-sitemap<3",
   "sphinxawesome-theme<7",
-  "sphinxcontrib-mermaid<2",
+  "sphinxcontrib-mermaid<3",
   "sphinxext-opengraph<1",
 ]
 optional-dependencies.geo = [
