@@ -84,7 +84,7 @@ dynamic = [
 ]
 dependencies = [
   "orjson<4",
-  "polars>=1.15,<1.43",
+  "polars>=1.15,<1.44",
 ]
 optional-dependencies.all = [
   "macropipe[geo]",
