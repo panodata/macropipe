@@ -24,7 +24,9 @@ pipeline = MacroPipe.from_recipes(
 )
 
 # Read Parquet data.
-lf = pl.scan_parquet("https://cdn.crate.io/downloads/datasets/cratedb-datasets/timeseries/yc.2019.07-tiny.parquet")
+lf = pl.scan_parquet(
+    "https://cdn.crate.io/downloads/datasets/cratedb-datasets/timeseries/yc.2019.07-tiny.parquet"
+)
 
 # Apply transformation pipeline and compute the result.
 df = lf.mp.apply(pipeline).collect()
