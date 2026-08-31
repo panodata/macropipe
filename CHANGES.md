@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 2026/08/31 v0.0.2
 - Dependencies: Relaxed versions of core requirements orjson and polars
 
 ## 2026/08/31 v0.0.1
