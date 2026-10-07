@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Dependencies: Downgraded to Polars 1.x due to incompatibilities with polars-st
 
 ## 2026/08/31 v0.0.2
 - Dependencies: Relaxed versions of core requirements orjson and polars
