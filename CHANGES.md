@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 2026/10/07 v0.0.3
 - Dependencies: Downgraded to Polars 1.x due to incompatibilities with polars-st
 
 ## 2026/08/31 v0.0.2
