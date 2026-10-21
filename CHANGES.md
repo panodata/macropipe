@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## 2026/10/21 v0.0.4
+- Permitted installation of Polars 2.x
+
 ## 2026/10/07 v0.0.3
 - Dependencies: Downgraded to Polars 1.x due to incompatibilities with polars-st
 
