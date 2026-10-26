@@ -95,7 +95,7 @@ optional-dependencies.develop = [
   "pyproject-fmt<3",
   "ruff==0.17.*",
   "sphinx-autobuild>=2024.10.3",
-  "ty==0.0.89",
+  "ty==0.0.91",
   "validate-pyproject>=0.25,<1",
 ]
 optional-dependencies.docs = [
